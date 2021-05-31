@@ -1,8 +1,8 @@
 //  Formatting the date (Today's date)
 let todayDate = new Date();
-const day = String(today.getDate()).padStart(2, "0");
-const mon = String(today.getMonth()).padStart(2, "0"); // January is 0!
-const year = today.getFullYear();
+const day = String(todayDate.getDate()).padStart(2, "0");
+const mon = String(todayDate.getMonth()).padStart(2, "0"); // January is 0!
+const year = todayDate.getFullYear();
 todayDate = `${day}/${mon}/${year}`;
 
 let randomId = Math.floor(Math.random(1000000000) * 1000000000);
