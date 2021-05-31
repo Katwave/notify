@@ -57,7 +57,8 @@ self.addEventListener("activate", function (event) {
 // Onclick event
 self.addEventListener("notificationclick", function (event) {
   let url = "https://www.ordapple.com";
-  console.log(event);
+  console.log(event.notification.body);
+  console.log(event.notification);
   event.notification.close(); // Android needs explicit close.
   event.waitUntil(
     clients.matchAll({ type: "window" }).then((windowClients) => {
