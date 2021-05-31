@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Push Notifications</title>
-    <link rel="manifest" href="../Ordapple.json" />
+    <link rel="manifest" href="./pushdown.json" />
   </head>
   <body>
     <h1>Push Notifications</h1>
@@ -19,9 +19,14 @@
       console.log("Service Worker Registered...");
 
       Notification.requestPermission().then(() => {
-        ServiceWorkerRegistration.showNotification("New notification", {
-          body: "this is a new notification",
-          icon: "./icon.png",
+        Push.create("Hello world!", {
+          body: "How's it hangin'?",
+          icon: "/icon.png",
+          timeout: 4000,
+          onClick: function () {
+            window.focus();
+            this.close();
+          },
         });
       });
     </script>

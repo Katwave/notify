@@ -1,0 +1,16 @@
+{
+  "background_color": "#fff",
+  "description": "Push Notifications",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    }
+  ],
+  "name": "Ordapple",
+  "short_name": "Ordapple",
+  "start_url": "https://pushdown.netlify.app/",
+  "theme_color": "#ff7a5a"
+}
