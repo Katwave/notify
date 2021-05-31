@@ -21,7 +21,7 @@ Notification.requestPermission(function (result) {
         data: {
           dateOfArrival: Date.now(),
           primaryKey: "2",
-          url: "ordapple.com",
+          url: "https://www.ordapple.com",
         },
         actions: [
           {
