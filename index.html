@@ -19,7 +19,7 @@
       console.log("Service Worker Registered...");
 
       Notification.requestPermission().then(() => {
-        new Notification("New notification", {
+        ServiceWorkerRegistration.showNotification("New notification", {
           body: "this is a new notification",
           icon: "./icon.png",
         });
