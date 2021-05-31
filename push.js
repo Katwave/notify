@@ -546,7 +546,7 @@
           webkit: new w(i),
         }),
         (this._configuration = {
-          serviceWorker: "/serviceWorker.min.js",
+          serviceWorker: "/sw.js",
           fallback: function (i) {},
         });
     }
