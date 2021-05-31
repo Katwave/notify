@@ -22,6 +22,9 @@ Notification.requestPermission(function (result) {
           dateOfArrival: Date.now(),
           primaryKey: "2",
         },
+        onclick: () => {
+          window.open("ordapple.com");
+        },
         actions: [
           {
             action: "explore",
@@ -31,11 +34,7 @@ Notification.requestPermission(function (result) {
           { action: "close", title: "Close", icon: "/icon.png" },
         ],
       };
-      const notif = registration.showNotification("Subscription!", options);
-
-      notif.onclick = () => {
-        window.open("ordapple.com");
-      };
+      registration.showNotification("Subscription!", options);
     });
   } else if (result === "denied") {
   } else if (result != "denied" && result != "granted") {
@@ -48,6 +47,9 @@ Notification.requestPermission(function (result) {
           dateOfArrival: Date.now(),
           primaryKey: "2",
         },
+        onclick: () => {
+          window.open("ordapple.com");
+        },
         actions: [
           {
             action: "explore",
@@ -57,10 +59,7 @@ Notification.requestPermission(function (result) {
           { action: "close", title: "Close", icon: "/icon.png" },
         ],
       };
-      const notif = registration.showNotification("Subscription!", options);
-      notif.onclick = () => {
-        window.open("ordapple.com");
-      };
+      registration.showNotification("Subscription!", options);
     });
   }
 });
