@@ -1,52 +1,33 @@
-const publicVapidKey =
-  "BJyNbZ9i2wZIw3tlbJgB76DJpOBAFBUfXGeF83X5IsDkEhWdB2edD0VwWUZkbpK1d4Mwom7XcLPQh5--U-0MujI";
+// const notifyMe = () => {
+//     if ('notification' in window) {
+//         notify()
+//     }
+//     else if ()
+// }
 
-// Check for service worker
-if ("serviceWorker" in navigator) {
-  alert("Subscribe");
-  send().catch((err) => console.error(err));
-}
+// Notification.requestPermission();
+// const notification = new Notification("New order", {
+//   icon: "./icon.png",
+//   body: "Katlego Mangoale placed a new order!",
+// });
 
-// Register SW, Register Push, Send Push
-async function send() {
-  // Register Service Worker
-  console.log("Registering service worker...");
-  const register = await navigator.serviceWorker.register("/sw.js", {
-    scope: "/",
-  });
-  console.log("Service Worker Registered...");
+Push.create("Hello world!", {
+  body: "How's it hangin'?",
+  icon: "/icon.png",
+  timeout: 4000,
+  onClick: function () {
+    window.focus();
+    this.close();
+  },
+});
 
-  // Register Push
-  console.log("Registering Push...");
-  const subscription = await register.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(publicVapidKey),
-  });
-  console.log("Push Registered...");
-
-  // Send Push Notification
-  console.log("Sending Push...");
-  await fetch("/subscribe", {
-    method: "POST",
-    body: JSON.stringify(subscription),
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  console.log("Push Sent...");
-}
-
-function urlBase64ToUint8Array(base64String) {
-  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
-  const base64 = (base64String + padding)
-    .replace(/\-/g, "+")
-    .replace(/_/g, "/");
-
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
-
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
+navigator.serviceWorker.register("./sw.js");
+Notification.requestPermission(function (result) {
+  if (result === "granted") {
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.showNotification("Notification with ServiceWorker");
+    });
+  } else {
+    document.getElementsByClassName("notif")[0].innerHTML = "not fiound";
   }
-  return outputArray;
-}
+});

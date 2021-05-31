@@ -10,25 +10,7 @@
   <body>
     <h1>Push Notifications</h1>
 
-    <script>
-      // Register Service Worker
-      console.log("Registering service worker...");
-      const register = navigator.serviceWorker.register("/sw.js", {
-        scope: "/",
-      });
-      console.log("Service Worker Registered...");
-
-      Notification.requestPermission().then(() => {
-        Push.create("Hello world!", {
-          body: "How's it hangin'?",
-          icon: "/icon.png",
-          timeout: 4000,
-          onClick: function () {
-            window.focus();
-            this.close();
-          },
-        });
-      });
-    </script>
+    <script src="./push.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
