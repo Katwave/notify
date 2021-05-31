@@ -27,14 +27,14 @@ btn.addEventListener("click", (e) => {
             primaryKey: randomId,
             url: "https://www.ordapple.com",
           },
-          actions: [
-            {
-              action: "explore",
-              title: "Explore this new world",
-              icon: "/icon.png",
-            },
-            { action: "close", title: "Close", icon: "/icon.png" },
-          ],
+          // actions: [
+          //   {
+          //     action: "explore",
+          //     title: "Explore this new world",
+          //     icon: "/icon.png",
+          //   },
+          //   { action: "close", title: "Close", icon: "/icon.png" },
+          // ],
         };
 
         // Send notification
@@ -55,14 +55,14 @@ btn.addEventListener("click", (e) => {
                 dateOfArrival: Date.now(),
                 primaryKey: "2",
               },
-              actions: [
-                {
-                  action: "explore",
-                  title: "Explore this new world",
-                  icon: "/icon.png",
-                },
-                { action: "close", title: "Close", icon: "/icon.png" },
-              ],
+              // actions: [
+              //   {
+              //     action: "explore",
+              //     title: "Explore this new world",
+              //     icon: "/icon.png",
+              //   },
+              //   { action: "close", title: "Close", icon: "/icon.png" },
+              // ],
             };
             // Send notification
             registration.showNotification("Subscription!", options);
