@@ -22,6 +22,7 @@ btn.addEventListener("click", (e) => {
           body: "This notification was generated from a push!",
           icon: "/icon.png",
           vibrate: [100, 50, 100],
+          badge: "/icon.png",
           data: {
             dateOfArrival: todayDate,
             primaryKey: randomId,
