@@ -21,10 +21,7 @@ Notification.requestPermission(function (result) {
         body: "Thank you for subscribing!",
         icon: "/icon.png",
         // timeout: 4000,
-        onClick: function () {
-          window.focus();
-          this.close();
-        },
+
         link: "https://www.ordapple.com",
       });
     });
