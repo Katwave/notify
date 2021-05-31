@@ -22,10 +22,10 @@ Notification.requestPermission(function (result) {
         icon: "/icon.png",
         // timeout: 4000,
         onClick: function () {
-          // window.focus();
-          window.open("https://www.ordapple.com");
-          // this.close();
+          window.focus();
+          this.close();
         },
+        link: "https://www.ordapple.com",
       });
     });
   }
