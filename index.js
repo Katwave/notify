@@ -35,7 +35,7 @@ Notification.requestPermission(function (result) {
         ],
       };
       console.log("registration: ", registration);
-      console.log("resuls: ", res);
+      console.log("resuls: ", result);
       registration.showNotification("Subscription!", options);
     });
   } else if (result === "denied") {
