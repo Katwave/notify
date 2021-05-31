@@ -22,9 +22,6 @@ Notification.requestPermission(function (result) {
           dateOfArrival: Date.now(),
           primaryKey: "2",
         },
-        onclick: () => {
-          window.open("ordapple.com");
-        },
         actions: [
           {
             action: "explore",
@@ -51,9 +48,6 @@ Notification.requestPermission(function (result) {
             data: {
               dateOfArrival: Date.now(),
               primaryKey: "2",
-            },
-            onclick: () => {
-              window.open("ordapple.com");
             },
             actions: [
               {
