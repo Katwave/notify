@@ -31,7 +31,11 @@ Notification.requestPermission(function (result) {
           { action: "close", title: "Close", icon: "/icon.png" },
         ],
       };
-      registration.showNotification("Subscription!", options);
+      const notif = registration.showNotification("Subscription!", options);
+
+      notif.onclick = () => {
+        window.open("ordapple.com");
+      };
     });
   } else if (result === "denied") {
   } else if (result != "denied" && result != "granted") {
@@ -53,7 +57,10 @@ Notification.requestPermission(function (result) {
           { action: "close", title: "Close", icon: "/icon.png" },
         ],
       };
-      registration.showNotification("Subscription!", options);
+      const notif = registration.showNotification("Subscription!", options);
+      notif.onclick = () => {
+        window.open("ordapple.com");
+      };
     });
   }
 });

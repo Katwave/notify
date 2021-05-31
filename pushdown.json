@@ -9,7 +9,7 @@
       "sizes": "150x150"
     }
   ],
-  "name": "Ordapple",
+  "name": "pushdown",
   "short_name": "Ordapple",
   "start_url": "https://pushdown.netlify.app/",
   "theme_color": "#ff7a5a"
